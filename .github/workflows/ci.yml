@@ -1,0 +1,31 @@
+name: Python CI
+
+on:
+#sucesos para cada accion
+  push:
+  #cada vez que se haga push:
+    branches: [ main ] # Cambia "main" si tu ramaprincipal tiene otro nombre.
+  pull_request:
+  #cada vez que se haga pull request
+    branches: [ main ]
+
+jobs:
+  build:
+    #runs-on, maquina con latest version of ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    #pasos del checkout del repositorio a probar dentro de la maquina creada (ubuntu)
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    #creacion de un entorno en python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        #version de oython: 3.8
+        python-version: 3.8
+
+    #ejecucion de las pruebas unitarias creadas para la calculadora con python    
+    - name: Run tests
+      run: |
+        python -m unittest discover -s tests -p "test_*.py"
