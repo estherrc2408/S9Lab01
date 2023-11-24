@@ -1,4 +1,6 @@
 import unittest
+import sys
+
 from calculadora import sumar
 
 class TestSumar(unittest.TestCase):
@@ -12,6 +14,9 @@ class TestSumar(unittest.TestCase):
         # Pruebas adicionales de tipos
         self.assertEqual(sumar(3.5, 2), "Ambos deben ser números enteros")
         self.assertEqual(sumar("3", 2), "Ambos deben ser números enteros")
+        # Pruebas limites
+        self.assertEqual(sumar(sys.maxsize, 1), sys.maxsize)
+        
 
 if __name__ == '__main__':
     unittest.main()
