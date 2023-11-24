@@ -25,6 +25,15 @@ jobs:
         #version de oython: 3.8
         python-version: 3.8
 
+    #listado de archivos
+    - name: Check workspace content
+      run: ls -R
+
+    - name: Update dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
     #ejecucion de las pruebas unitarias creadas para la calculadora con python    
     - name: Run tests
       run: |
