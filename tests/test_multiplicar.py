@@ -1,4 +1,6 @@
 import unittest
+import sys
+
 from calculadora import multiplicar
 
 class TestMultiplicar(unittest.TestCase):
@@ -13,6 +15,8 @@ class TestMultiplicar(unittest.TestCase):
         # Pruebas adicionales de tipos
         self.assertEqual(multiplicar(3.5, 2), "Ambos deben ser números enteros")
         self.assertEqual(multiplicar("3", 2), "Ambos deben ser números enteros")
+        # Pruebas límites
+        self.assertEqual(multiplicar(sys.maxsize, 2), sys.maxsize)
 
 if __name__ == '__main__':
     unittest.main()

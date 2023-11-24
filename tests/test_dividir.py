@@ -1,4 +1,6 @@
 import unittest
+import sys
+
 from calculadora import dividir
 
 class TestDividir(unittest.TestCase):
@@ -15,6 +17,8 @@ class TestDividir(unittest.TestCase):
         # Pruebas adicionales de tipos
         self.assertEqual(dividir(3.5, 2), "Ambos deben ser números enteros")
         self.assertEqual(dividir("3", 2), "Ambos deben ser números enteros")
+        # Dividir un límite
+        self.assertEqual(dividir(sys.maxsize, 2), sys.maxsize / 2)
 
 if __name__ == '__main__':
     unittest.main()
