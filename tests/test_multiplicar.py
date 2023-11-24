@@ -16,7 +16,7 @@ class TestMultiplicar(unittest.TestCase):
         self.assertEqual(multiplicar(3.5, 2), "Ambos deben ser números enteros")
         self.assertEqual(multiplicar("3", 2), "Ambos deben ser números enteros")
         # Pruebas límites
-        self.assertEqual(multiplicar(sys.maxsize, 2), sys.maxsize)
+        self.assertEqual(multiplicar(sys.maxsize, 2), sys.maxsize*2)
 
 if __name__ == '__main__':
     unittest.main()
