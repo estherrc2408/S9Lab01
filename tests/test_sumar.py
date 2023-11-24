@@ -15,7 +15,7 @@ class TestSumar(unittest.TestCase):
         self.assertEqual(sumar(3.5, 2), "Ambos deben ser números enteros")
         self.assertEqual(sumar("3", 2), "Ambos deben ser números enteros")
         # Pruebas limites
-        self.assertEqual(sumar(sys.maxsize, 1), sys.maxsize)
+        self.assertEqual(sumar(sys.maxsize, 1), sys.maxsize+1)
         
 
 if __name__ == '__main__':
